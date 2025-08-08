@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: Default  # Change this if your agent is in a different pool
+  name: 'dckPool_01'  # Change this if your agent is in a different pool
 
 steps:
 - task: Maven@3
