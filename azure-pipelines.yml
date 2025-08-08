@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'vsts-agent-win-x64-4.259.0'
+  vmImage: 'agent1'
 
 steps:
 - task: Maven@3
