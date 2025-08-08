@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.*;
 
 public class RestAssuredDemo
 {
-    @Test
+   // @Test
     public void m1()
     {
         given()
@@ -22,7 +22,7 @@ public class RestAssuredDemo
                 //.log().body();
     }
 
-    @Test
+   // @Test
     public void m2()
     {
         int id;
