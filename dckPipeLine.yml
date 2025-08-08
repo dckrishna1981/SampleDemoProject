@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: vsts-agent-win-x64-4.259.0
 
 steps:
 - task: Maven@3
