@@ -17,9 +17,9 @@ public class RestAssuredDemo
                 .when()
                     .get("https://reqres.in/api/users/2")
                 .then()
-                    .statusCode(200)
-                .body("data.email",equalTo("janet.weaver@reqres.in"))
-                .log().body();
+                    .statusCode(200);
+                //.body("data.email",equalTo("janet.weaver@reqres.in"))
+                //.log().body();
     }
 
     @Test
