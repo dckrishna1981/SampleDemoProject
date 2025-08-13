@@ -3,6 +3,9 @@ trigger:
 
 pool:
   name: 'SelfHostedPoolDck'
+  demands:
+    - java
+    - maven
 
 steps:
 - task: Maven@3
@@ -15,3 +18,4 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
+
