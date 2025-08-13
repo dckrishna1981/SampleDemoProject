@@ -1,6 +1,7 @@
 package Base;
 
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -22,6 +23,7 @@ public class RestAssuredDemo
                 //.log().body();
 
         System.out.println("chinnikrishna");
+        Assert.assertEquals("500","300");
     }
 
    // @Test
