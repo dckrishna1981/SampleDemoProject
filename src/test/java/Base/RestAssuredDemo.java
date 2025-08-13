@@ -11,21 +11,21 @@ import static io.restassured.RestAssured.*;
 
 public class RestAssuredDemo
 {
-   // @Test
+    @Test
     public void m1()
     {
         given()
                 .when()
                     .get("https://reqres.in/api/users/2")
                 .then()
-                    .statusCode(500);
+                    .statusCode(200);
                 //.body("data.email",equalTo("janet.weaver@reqres.in"))
                 //.log().body();
 
 
     }
 
-   // @Test
+    @Test
     public void m2()
     {
         int id;
