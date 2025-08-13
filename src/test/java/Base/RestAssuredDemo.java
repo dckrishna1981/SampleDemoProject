@@ -20,6 +20,8 @@ public class RestAssuredDemo
                     .statusCode(200);
                 //.body("data.email",equalTo("janet.weaver@reqres.in"))
                 //.log().body();
+
+        System.out.println("chinnikrishna");
     }
 
    // @Test
