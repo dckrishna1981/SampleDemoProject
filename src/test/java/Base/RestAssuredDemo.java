@@ -52,6 +52,7 @@ public class RestAssuredDemo
         System.out.println("chinnikrishna");
         Assert.assertEquals(500,500);
         Assert.assertEquals(6,6);
+        Assert.assertEquals(7,7);
 
     }
 }
