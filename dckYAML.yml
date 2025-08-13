@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'  # Change this if your agent is in a different pool
+  name: 'SelfHostedPoolDck'
 
 steps:
 - task: Maven@3
