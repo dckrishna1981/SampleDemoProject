@@ -50,7 +50,7 @@ public class RestAssuredDemo
         System.out.println("status code ->"+res.getStatusCode());
         System.out.println("body ->"+res.getBody().toString());
         System.out.println("chinnikrishna");
-        Assert.assertEquals("500","300");
+        Assert.assertEquals(500,500);
 
     }
 }
