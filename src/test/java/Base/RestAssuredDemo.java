@@ -22,8 +22,7 @@ public class RestAssuredDemo
                 //.body("data.email",equalTo("janet.weaver@reqres.in"))
                 //.log().body();
 
-        System.out.println("chinnikrishna");
-        Assert.assertEquals("500","300");
+
     }
 
    // @Test
@@ -50,7 +49,8 @@ public class RestAssuredDemo
         System.out.println("email ->"+res.jsonPath().getString("data.email"));
         System.out.println("status code ->"+res.getStatusCode());
         System.out.println("body ->"+res.getBody().toString());
-
+        System.out.println("chinnikrishna");
+        Assert.assertEquals("500","300");
 
     }
 }
