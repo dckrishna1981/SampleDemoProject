@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.*;
 
 public class RestAssuredDemo
 {
-    @Test
+    //@Test
     public void m1()
     {
         given()
@@ -23,17 +23,20 @@ public class RestAssuredDemo
                 //.log().body();
 
 
+
+
+
     }
 
     @Test
-    public void m2()
-    {
+    public void m2() throws InterruptedException {
         int id;
         id=given()
                 .when()
                 .get("https://reqres.in/api/users/2")
                 .jsonPath().getInt("data.id");
         System.out.println("id ->"+id);
+        //Thread.sleep(100000);
 
 
     }
