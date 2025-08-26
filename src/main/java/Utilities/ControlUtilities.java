@@ -12,12 +12,17 @@ import java.util.Date;
 import org.openqa.selenium.io.FileHandler;
 
 
+
+
 public class ControlUtilities
 {
     private WebDriver driver;
+    ReportingUtilities reportingUtilities;
+
     public ControlUtilities(WebDriver driver)
     {
         this.driver = driver;
+        reportingUtilities = new ReportingUtilities();
     }
 
     public void setTextIntoTextField(By byLocator,String strLocatorDescription, String strValue)
@@ -25,6 +30,7 @@ public class ControlUtilities
         if(checkElementExists(byLocator,strLocatorDescription)) {
             driver.findElement(byLocator).click();
             driver.findElement(byLocator).sendKeys(strValue);
+            reportingUtilities.logStep("The text field '" + strLocatorDescription + "'" + " set to '" + strValue + "'");
             System.out.println("The text field '" + strLocatorDescription + "'" + " set to '" + strValue + "'");
         }
     }
@@ -34,6 +40,7 @@ public class ControlUtilities
         //if(checkElementExists(byLocator,strLocatorDescription))
         if(waitForElementTillMaxTime(byLocator,strLocatorDescription,60)) {
             driver.findElement(byLocator).click();
+            reportingUtilities.logStep("The Button/Link '" + strLocatorDescription + "' is clicked");
             System.out.println("The Button/Link '" + strLocatorDescription + "' is clicked");
         }
     }
@@ -65,6 +72,7 @@ public class ControlUtilities
         }
         catch(TimeoutException te)
         {
+            reportingUtilities.logStep("The Element '" + strEleDescription + "' is NOT found after waiting the Max time of " + intMaxSeconds + " seconds");
             System.out.println("The Element '" + strEleDescription + "' is NOT found after waiting the Max time of " + intMaxSeconds + " seconds");
             return false;
         }
