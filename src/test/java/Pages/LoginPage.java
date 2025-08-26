@@ -1,5 +1,6 @@
 package Pages;
 
+import Base.BaseTest;
 import Utilities.ControlUtilities;
 import Utilities.ReportingUtilities;
 import org.openqa.selenium.By;
@@ -13,24 +14,26 @@ public class LoginPage
     private By byUsernameLabel = By.xpath("//label[text()='Username']");
     private By byLoginButton = By.xpath("//button[@type='submit']");
 
-    private ControlUtilities controlUtilities;
+    //private ControlUtilities controlUtilities;
+    BaseTest baseTest;
 
 
     public LoginPage(WebDriver driver)
     {
         this.driver = driver;
-        controlUtilities = new ControlUtilities(driver);
+        baseTest = new BaseTest();
     }
 
     public void loginOHRM(String strURL,String strUserName,String strPassword)
     {
 
-        driver.get(strURL);
-        controlUtilities.waitForElementTillMaxTime(byUsernameTF,"Username",60);
-        controlUtilities.takeScreenShot();
-        controlUtilities.setTextIntoTextField(byUsernameTF,"Username",strUserName);
-        controlUtilities.setTextIntoTextField(byPasswordTF,"Password",strPassword);
-        controlUtilities.clickElement(byLoginButton,"Login");
+
+        baseTest.getDriver().get(strURL);
+        baseTest.getControlUtilities(baseTest.getDriver()).waitForElementTillMaxTime(byUsernameTF,"Username",60);
+        baseTest.getControlUtilities(baseTest.getDriver()).takeScreenShot();
+        baseTest.getControlUtilities(baseTest.getDriver()).setTextIntoTextField(byUsernameTF,"Username",strUserName);
+        baseTest.getControlUtilities(baseTest.getDriver()).setTextIntoTextField(byPasswordTF,"Password",strPassword);
+        baseTest.getControlUtilities(baseTest.getDriver()).clickElement(byLoginButton,"Login");
 
 
     }

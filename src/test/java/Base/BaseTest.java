@@ -16,26 +16,24 @@ import java.lang.reflect.Method;
 
 public class BaseTest
 {
+    private static ThreadLocal <WebDriver>tDriver=new ThreadLocal<>();
     private WebDriver driver;
     private LoginPage loginPage;
     private HomePage homePage;
     private ReportingUtilities reportingUtilities;
     private ControlUtilities controlUtilities;
 
-    public static ExtentSparkReporter sparkReporter;
-    public static ExtentReports extentReports;
-    public static ExtentTest extentTest;
 
 
     public LoginPage getLoginPage()
     {
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(getDriver());
         return loginPage;
     }
 
     public HomePage getHomePage()
     {
-        homePage = new HomePage(driver);
+        homePage = new HomePage(getDriver());
         return homePage;
     }
 
@@ -51,26 +49,34 @@ public class BaseTest
         return controlUtilities;
     }
 
+    public WebDriver getDriver()
+    {
+        return tDriver.get();
+    }
+
     @BeforeMethod
     public void setup()
     {
         driver = new ChromeDriver();
+        tDriver.set(driver);
         driver.manage().window().maximize();
+        //getReportingUtilities().createTestNode("first test");
 
-        //getReportingUtilities().createTestNode(Thread.currentThread().getName());
     }
 
     @AfterMethod
     public void tearDown()
     {
-        if(driver!=null)
-            driver.quit();
+        if(getDriver()!=null)
+            getDriver().quit();
+        tDriver.remove();
     }
 
     @BeforeSuite
     public void setupReportSparker()
     {
         getReportingUtilities().initializeReport();
+
 
     }
 

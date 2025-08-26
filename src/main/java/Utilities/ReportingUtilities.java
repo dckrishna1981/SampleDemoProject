@@ -8,6 +8,7 @@ import java.io.File;
 public class ReportingUtilities {
     private static ExtentReports extentReports;
     private static ExtentTest extentTest;
+    private static ThreadLocal<ExtentTest> tExtentTest = new ThreadLocal<>();
     private static ExtentSparkReporter sparkReporter;
 
     private static final String REPORT_FOLDER = System.getProperty("user.dir") + File.separator + "Reports";
@@ -27,11 +28,12 @@ public class ReportingUtilities {
 
     public ExtentTest createTestNode(String testName) {
         extentTest = extentReports.createTest(testName);
+        tExtentTest.set(extentTest);
         return extentTest;
     }
 
-    public static ExtentTest getTest() {
-        return extentTest;
+    public ExtentTest getTest() {
+        return tExtentTest.get();
     }
 
     public void logStep(String s)
