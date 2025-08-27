@@ -19,8 +19,11 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
 
-- script: |
-    echo "Cleaning old reports from working directory..."    
+- powershell: |
+    Write-Host "Cleaning old reports from working directory..."
+    if (Test-Path "$(System.DefaultWorkingDirectory)\Reports") {
+        Remove-Item "$(System.DefaultWorkingDirectory)\Reports" -Recurse -Force
+    }
   displayName: 'Clean Old Reports'
 
   # ✅ Publish Extent Reports as pipeline artifacts
