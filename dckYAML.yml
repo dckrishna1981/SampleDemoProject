@@ -25,12 +25,3 @@ steps:
   inputs:
     targetPath: '$(System.DefaultWorkingDirectory)/Reports'  # folder where your Extent reports are generated
     artifact: 'ExtentReports'
-
-# ✅ (Optional) Publish report inside pipeline summary tab
-# Requires "HTML Report" Azure DevOps extension installed from Marketplace
-- task: PublishHTMLReport@1
-  displayName: 'Publish Extent Report Tab'
-  inputs:
-    reportDir: '$(System.DefaultWorkingDirectory)/Reports'
-    reportTitle: 'Extent Report'
-    tabName: 'Test Report'
