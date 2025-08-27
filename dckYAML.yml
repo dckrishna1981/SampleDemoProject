@@ -20,6 +20,7 @@ steps:
     goals: 'clean install'
 
 - script: |
+    rm -rf $(System.DefaultWorkingDirectory)/Reports/*
     echo $(System.DefaultWorkingDirectory)    
 
   # ✅ Publish Extent Reports as pipeline artifacts
