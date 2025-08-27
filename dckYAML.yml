@@ -20,8 +20,7 @@ steps:
     goals: 'clean install'
 
 - script: |
-    echo "Cleaning old reports from working directory..."
-    rm -rf $(System.DefaultWorkingDirectory)/Reports/*
+    echo "Cleaning old reports from working directory..."    
   displayName: 'Clean Old Reports'
 
   # ✅ Publish Extent Reports as pipeline artifacts
