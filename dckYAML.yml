@@ -19,6 +19,9 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
 
+- script: |
+    echo $(System.DefaultWorkingDirectory)    
+
   # ✅ Publish Extent Reports as pipeline artifacts
 - task: PublishPipelineArtifact@1
   displayName: 'Publish Extent HTML Report'
