@@ -29,3 +29,10 @@ steps:
   inputs:
     targetPath: '$(System.DefaultWorkingDirectory)/Reports'  # folder where your Extent reports are generated
     artifact: 'ExtentReports'
+
+  # 📊 Publish Extent Reports inline in pipeline summary
+- task: PublishHTMLReports@1
+  displayName: 'Publish Extent Report in Pipeline Summary'
+  inputs:
+    reportDir: '$(System.DefaultWorkingDirectory)/Reports'
+    tabName: 'Extent Report'
