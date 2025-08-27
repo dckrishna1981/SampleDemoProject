@@ -7,6 +7,13 @@ pool:
     - java
     - maven
 
+- powershell: |
+    Write-Host "Cleaning old reports from working directory..."
+    if (Test-Path "$(System.DefaultWorkingDirectory)\Reports") {
+        Remove-Item "$(System.DefaultWorkingDirectory)\Reports" -Recurse -Force
+    }
+  displayName: 'Clean Old Reports'
+
 steps:
 - task: Maven@3
   inputs:
@@ -19,12 +26,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
 
-- powershell: |
-    Write-Host "Cleaning old reports from working directory..."
-    if (Test-Path "$(System.DefaultWorkingDirectory)\Reports") {
-        Remove-Item "$(System.DefaultWorkingDirectory)\Reports" -Recurse -Force
-    }
-  displayName: 'Clean Old Reports'
+
 
   # ✅ Publish Extent Reports as pipeline artifacts
 - task: PublishPipelineArtifact@1
