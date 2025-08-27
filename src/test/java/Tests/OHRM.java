@@ -36,6 +36,8 @@ public class OHRM extends BaseTest
         String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
         getLoginPage().loginOHRM(strURL,"Admin","admin123");
         getReportingUtilities().logStep("step3_1");
+        getReportingUtilities().logStep("testing");
+
         getHomePage().logOutOHRM();
     }
 }
