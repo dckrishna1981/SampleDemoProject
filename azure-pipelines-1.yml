@@ -1,0 +1,25 @@
+trigger:
+- main
+
+pool: SelfHostedPoolDck
+
+jobs:
+- job: TestsOnAgent1
+  steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean test'
+      options: '-Dsurefire.suiteXmlFiles=testng-part1.xml'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/testng-results.xml'
+
+- job: TestsOnAgent2
+  steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean test'
+      options: '-Dsurefire.suiteXmlFiles=testng-part2.xml'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/testng-results.xml'
