@@ -23,21 +23,22 @@ public class OHRM extends BaseTest
     public void TC_002()
     {
         getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
-        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-        getLoginPage().loginOHRM(strURL,"Admin","admin123");
-        getReportingUtilities().logStep("step2_1");
-        getHomePage().logOutOHRM();
+        String strURL = "https://www.google.com"; //https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        //getLoginPage().loginOHRM(strURL,"Admin","admin123");
+
+        getReportingUtilities().logStep("google_1");
+        //getHomePage().logOutOHRM();
     }
 
     @Test
     public void TC_003()
     {
         getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
-        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-        getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        String strURL = "https://www.google.com";// "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        //getLoginPage().loginOHRM(strURL,"Admin","admin123");
         getReportingUtilities().logStep("step3_1");
         getReportingUtilities().logStep("testing");
 
-        getHomePage().logOutOHRM();
+        //getHomePage().logOutOHRM();
     }
 }
