@@ -27,6 +27,9 @@ public class OHRM extends BaseTest
         //getLoginPage().loginOHRM(strURL,"Admin","admin123");
 
         getReportingUtilities().logStep("google_1");
+        try {
+            Thread.sleep(10000);
+        }catch(Exception e){}
         //getHomePage().logOutOHRM();
     }
 
@@ -38,6 +41,9 @@ public class OHRM extends BaseTest
         //getLoginPage().loginOHRM(strURL,"Admin","admin123");
         getReportingUtilities().logStep("step3_1");
         getReportingUtilities().logStep("testing");
+        try {
+            Thread.sleep(10000);
+        }catch(Exception e){}
 
         //getHomePage().logOutOHRM();
     }
