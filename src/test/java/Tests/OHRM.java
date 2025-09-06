@@ -25,7 +25,7 @@ public class OHRM extends BaseTest
         getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
         String strURL = "https://www.google.com"; //https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
         //getLoginPage().loginOHRM(strURL,"Admin","admin123");
-
+        getDriver().get(strURL);
         getReportingUtilities().logStep("google_1");
         try {
             Thread.sleep(10000);
@@ -39,6 +39,7 @@ public class OHRM extends BaseTest
         getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
         String strURL = "https://www.google.com";// "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
         //getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        getDriver().get(strURL);
         getReportingUtilities().logStep("step3_1");
         getReportingUtilities().logStep("testing");
         try {
