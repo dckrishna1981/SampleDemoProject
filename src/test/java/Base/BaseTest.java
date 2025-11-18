@@ -7,12 +7,18 @@ import Utilities.ReportingUtilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.Browser;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.net.URL;
 
 public class BaseTest
 {
@@ -57,7 +63,25 @@ public class BaseTest
     @BeforeMethod
     public void setup()
     {
+        //with simple driver
+        /*
         driver = new ChromeDriver();
+        tDriver.set(driver);
+        driver.manage().window().maximize();
+
+         */
+
+        //with grid and no docker
+        WebDriver driver;URL url=null;
+        String hburl = "http://localhost:4444";
+        ChromeOptions dp=new ChromeOptions();
+        //dp.setPlatform(Platform.WIN10);
+       // dp.setBrowserName(Browser.CHROME.browserName());
+        try{
+        url=new URL(hburl);
+        }
+        catch(Exception e){}
+        driver=new RemoteWebDriver(url,dp);
         tDriver.set(driver);
         driver.manage().window().maximize();
         //getReportingUtilities().createTestNode("first test");

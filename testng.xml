@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="testsuite" parallel="methods" thread-count="2">
+<suite name="testsuite" parallel="methods" thread-count="3">
     <test verbose="2" preserve-order="true" name="dcktests">
         <classes>
-            <!-- <class name="Base.RestAssuredDemo"/> -->
+            <!--class name="RA.APITests"/> -->
             <class name="Tests.OHRM"/>
         </classes>
     </test>
-</suite>
+
+    <!--
+        <test name="Chrome Tests">
+            <parameter name="browser" value="chrome" />
+            <classes>
+                <class name="Tests.OHRM"/>
+            </classes>
+        </test>
+
+        <test name="Firefox Tests">
+            <parameter name="browser" value="firefox" />
+            <classes>
+                <class name="Tests.OHRM"/>
+            </classes>
+        </test>
+        -->
+
+    </suite>

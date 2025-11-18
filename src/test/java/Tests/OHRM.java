@@ -8,7 +8,7 @@ public class OHRM extends BaseTest
 {
 
 
-    //@Test
+    @Test
     public void TC_001()
     {
 
@@ -23,22 +23,22 @@ public class OHRM extends BaseTest
     public void TC_002()
     {
         getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
-        String strURL = "https://www.google.com"; //https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-        //getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        String strURL =  "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"; //"https://www.google.com";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
         getDriver().get(strURL);
         getReportingUtilities().logStep("google_1");
         try {
             Thread.sleep(10000);
         }catch(Exception e){}
-        //getHomePage().logOutOHRM();
+        getHomePage().logOutOHRM();
     }
 
     @Test
     public void TC_003()
     {
         getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
-        String strURL = "https://www.google.com";// "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-        //getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        String strURL =  "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"; //"https://www.google.com";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
         getDriver().get(strURL);
         getReportingUtilities().logStep("step3_1");
         getReportingUtilities().logStep("testing");
@@ -46,6 +46,6 @@ public class OHRM extends BaseTest
             Thread.sleep(10000);
         }catch(Exception e){}
 
-        //getHomePage().logOutOHRM();
+        getHomePage().logOutOHRM();
     }
 }
