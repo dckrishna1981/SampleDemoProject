@@ -7,7 +7,7 @@ services:
     ports:
       - "4444:4444"
 
-  chrome1:
+  chrome:
     image: selenium/node-chrome:latest
     depends_on:
       - selenium-hub
@@ -16,33 +16,5 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
-  chrome2:
-    image: selenium/node-chrome:latest
-    depends_on:
-      - selenium-hub
-    shm_size: 2gb
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
-  chrome3:
-    image: selenium/node-chrome:latest
-    depends_on:
-      - selenium-hub
-    shm_size: 2gb
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443		
-
-  firefox:
-    image: selenium/node-firefox:latest
-    depends_on:
-      - selenium-hub
-    shm_size: 2gb
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+   deploy:
+      replicas: 3       # number of chrome nodes

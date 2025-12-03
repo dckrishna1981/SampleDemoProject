@@ -68,10 +68,11 @@ public class BaseTest
         driver = new ChromeDriver();
         tDriver.set(driver);
         driver.manage().window().maximize();
+        */
 
-         */
 
-        //with grid and no docker
+        //with grid and docker
+
         WebDriver driver;URL url=null;
         String hburl = "http://localhost:4444";
         ChromeOptions dp=new ChromeOptions();
