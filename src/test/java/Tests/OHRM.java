@@ -48,4 +48,59 @@ public class OHRM extends BaseTest
 
         getHomePage().logOutOHRM();
     }
+
+    @Test
+    public void TC_004()
+    {
+
+        getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
+        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        getReportingUtilities().logStep("TC_004");
+        getHomePage().logOutOHRM();
+    }
+
+    @Test
+    public void TC_005()
+    {
+
+        getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
+        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        getReportingUtilities().logStep("TC_005");
+        getHomePage().logOutOHRM();
+    }
+
+    @Test
+    public void TC_006()
+    {
+
+        getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
+        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        getReportingUtilities().logStep("TC_006");
+        getHomePage().logOutOHRM();
+    }
+
+    @Test
+    public void TC_007()
+    {
+
+        getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
+        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        getReportingUtilities().logStep("TC_007");
+        getHomePage().logOutOHRM();
+    }
+
+    @Test
+    public void TC_008()
+    {
+
+        getReportingUtilities().createTestNode(Thread.currentThread().getStackTrace()[1].getMethodName());
+        String strURL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+        getLoginPage().loginOHRM(strURL,"Admin","admin123");
+        getReportingUtilities().logStep("TC_008");
+        getHomePage().logOutOHRM();
+    }
 }
