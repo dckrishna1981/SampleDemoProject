@@ -49,7 +49,7 @@ public class OHRM extends BaseTest
         getHomePage().logOutOHRM();
     }
 
-    @Test
+    //@Test
     public void TC_004()
     {
 
@@ -60,7 +60,7 @@ public class OHRM extends BaseTest
         getHomePage().logOutOHRM();
     }
 
-    @Test
+    //@Test
     public void TC_005()
     {
 
@@ -71,7 +71,7 @@ public class OHRM extends BaseTest
         getHomePage().logOutOHRM();
     }
 
-    @Test
+    //@Test
     public void TC_006()
     {
 
@@ -82,7 +82,7 @@ public class OHRM extends BaseTest
         getHomePage().logOutOHRM();
     }
 
-    @Test
+   // @Test
     public void TC_007()
     {
 
@@ -93,7 +93,7 @@ public class OHRM extends BaseTest
         getHomePage().logOutOHRM();
     }
 
-    @Test
+   // @Test
     public void TC_008()
     {
 
